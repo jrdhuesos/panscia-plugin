@@ -14,7 +14,10 @@ licence, not the material itself.
 ## When it is worth looking
 
 `search_network` covers every node in one call and costs nothing, so a search
-that finds nothing has cost nothing.
+that finds nothing has cost nothing. What comes back is what can be licensed
+right now; `offline_matches` says how many more matched on nodes that are
+asleep, and `include_offline` shows them, which is only worth doing when the
+person can wait for a node to return.
 
 It earns its place when a request calls for primary material rather than general
 knowledge — the original photograph rather than a description of one, a specific
@@ -150,7 +153,7 @@ not what you hoped for. A report is a legal signal, not a review.
 
 | Tool | Cost | Use |
 |---|---|---|
-| `search_network` | free | One query across every node |
+| `search_network` | free | One query across every node; returns what is licensable now, `include_offline` for the rest |
 | `list_nodes` | free | See who is on the network |
 | `preview_asset` | free | Description or thumbnail before buying |
 | `query_node` | paid | Ask a node about everything it holds — usually cheaper than buying |
