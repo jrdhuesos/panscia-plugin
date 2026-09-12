@@ -1,7 +1,7 @@
 # Giving your agent a wallet
 
 Your agent found something worth buying and told you it cannot pay. That is
-correct behaviour, not a fault: DataSelf issues a Lightning invoice, and an agent
+correct behaviour, not a fault: Panscia issues a Lightning invoice, and an agent
 can only settle it if someone has given it a wallet to spend from.
 
 An agent cannot obtain a wallet by itself. Funding takes money, and money takes a
@@ -11,7 +11,7 @@ human. What follows is how to hand one over.
 
 One capability: **pay a BOLT11 invoice**. That is the whole requirement.
 
-- No DataSelf account, no API key, no registration with us
+- No Panscia account, no API key, no registration with us
 - No preimage handling — send `Authorization: L402 <invoice_id>` and the node
   confirms settlement itself
 - No integration with our code; we issue standard invoices, deliberately

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "dataself-network": {
+    "panscia-network": {
       "type": "streamable-http",
       "url": "https://dataself-registry-production.up.railway.app/mcp"
     }

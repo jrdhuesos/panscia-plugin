@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "dataself-network": {
+    "panscia-network": {
       "type": "http",
       "url": "https://dataself-registry-production.up.railway.app/mcp"
     }

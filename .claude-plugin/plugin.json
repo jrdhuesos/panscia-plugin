@@ -1,10 +1,10 @@
 {
-  "name": "dataself",
+  "name": "panscia",
   "description": "Search a network of independently owned catalogues \u2014 documents, images, audio and video that their owners publish and sell, and that is not on the public web. Searching is free; asking a node a question or licensing a file for a task is paid per request over Lightning. Payment grants a single-task licence; the owner keeps all rights.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
-    "name": "DataSelf"
+    "name": "Panscia"
   },
-  "homepage": "https://dataself-registry-production.up.railway.app",
+  "homepage": "https://panscia.com",
   "license": "MIT"
 }

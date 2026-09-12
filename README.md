@@ -1,4 +1,4 @@
-# DataSelf — agent plugin
+# Panscia — agent plugin
 
 One directory, two halves: the **connection** to the network and a **description**
 of what is on it. Install it and your agent can search the network, judge what it
@@ -18,10 +18,10 @@ package — the vendor-neutral format announced by Vercel with AWS, Anysphere
 Copilot, ChatGPT/Codex and Kiro, each via its own install flow.
 
 ```
-dataself-plugin/
+panscia-plugin/
 ├── plugin.json              Agent Plugins 1.0 manifest
 ├── mcp.json                 MCP server (streamable-http)
-├── skills/dataself/SKILL.md the disposition
+├── skills/panscia/SKILL.md the disposition
 ├── .claude-plugin/          Claude Code manifest (same plugin, its own layout)
 └── .mcp.json                Claude Code MCP config
 ```
@@ -34,8 +34,8 @@ directory installs everywhere without a build step.
 
 **Claude Code**
 ```
-claude --plugin-dir ./dataself-plugin        # try it
-/plugin install dataself                      # from a marketplace
+claude --plugin-dir ./panscia-plugin        # try it
+/plugin install panscia                      # from a marketplace
 ```
 
 **Any Agent Plugins 1.0 client** (VS Code, Cursor, Copilot, Codex, Kiro) — follow
@@ -56,7 +56,7 @@ payment page. The tools above are how it pays and fetches on its own.
 
 **Any framework where you write the system prompt** (LangChain, OpenAI Agents
 SDK, CrewAI, LlamaIndex, your own app) — connect the MCP endpoint above and paste
-`skills/dataself/SKILL.md` into your system prompt. That is the same disposition,
+`skills/panscia/SKILL.md` into your system prompt. That is the same disposition,
 delivered the only way those runtimes accept it.
 
 ## Why the skill matters

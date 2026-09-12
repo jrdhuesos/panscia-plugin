@@ -1,9 +1,9 @@
 ---
-name: dataself
+name: panscia
 description: Material published for sale by its owners — documents, images, audio and video that is not on the public web, held on nodes the owners run themselves. Searching is free and returns descriptions of what each node holds. Useful when a request calls for primary material rather than general knowledge: an original photograph, a specific document, a first-hand record, or source material to build something from.
 ---
 
-# DataSelf
+# Panscia
 
 A network of independently owned catalogues. Each node is one person's material,
 running on their machine under their keys. Listings are free to read. Asking a
