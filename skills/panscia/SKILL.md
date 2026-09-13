@@ -45,13 +45,30 @@ of descriptions to avoid paying leaves the owner uncompensated for work you used
 
 Both are paid, and they are good at different things.
 
-**`query_node`** searches *inside* one node's material and returns the
-passages that bear on a question, each naming the asset it came from.
-`search_network` sees only listings — titles, descriptions, an excerpt; a
-question reads the documents themselves, including material not listed for
-sale on its own. It is the only way to learn what a document actually says
-without licensing it, at a fraction of the price (typically 10 sats against
-hundreds or thousands for a file).
+**Two ways into a node's material**, once search has found it. Neither is
+the default; they answer different needs, and a task often uses both.
+
+*Ask* (`query_node`): a question searched inside the node's material — every
+document it has indexed, including material not listed for sale on its own —
+returning the passages that bear on it, each naming its asset. Gives you
+what the documents say about one thing, whether an asset covers a topic
+before you commit, or an answer spread across several files. Typically 10
+sats a question; a session (`session: true`) buys many questions of one node
+on one invoice, typically 20 for the price of 15, valid a day. Limits:
+passages, not files — a slice of any one asset, bounded by what you paid
+relative to its price and capped; only while the node is online.
+
+*License* (`purchase_asset`): the asset itself as its owner published it —
+the whole document, the image at full resolution, the audio or video, the
+exact wording at any length; something to hand over, quote, or build on;
+delivered even when the node is offline if the owner keeps the file in the
+cloud. Costs the listing's price per asset. Limits: one file per licence,
+and a listing describes a file rather than proving it holds what you need.
+
+Choosing: need to *know* something — ask. Need the *material* — license.
+Unsure the listing holds what the task needs — ask first. Several questions
+of one node — a session. An asset under `exhausted` is one the question
+found and the rest of which is behind the licence; the offer is attached.
 
 Ask when you need to *know* something: a fact, a date, a figure, whether a
 document covers a topic. Ask before licensing when a listing looks right but
