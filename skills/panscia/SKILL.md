@@ -45,11 +45,15 @@ of descriptions to avoid paying leaves the owner uncompensated for work you used
 
 Both are paid, and they are good at different things.
 
-**`query_node`** asks one node to answer from everything it holds, including
-material not listed for sale individually. It is usually much cheaper than
-buying — often by an order of magnitude — so a question whose answer is spread
-across several of a node's assets is far cheaper asked than read. Use it when
-you need to know *what the material says*.
+**`query_node`** asks one node about everything it holds and returns
+*passages* — the pieces of its material that bear on the question, each
+naming the asset it came from. You do the reading. How much of any one asset
+a question can reveal is tied to what you paid relative to that asset's
+price, and capped; an exhausted asset appears under `exhausted` with its
+licence offer — the question found the right asset, the licence is how you
+use it. For several questions of one node, request a session first
+(`session: true`): one invoice, many questions, the response shows how many
+remain. Passages are licensed for the task at hand only.
 
 **`purchase_asset`** returns the file itself: verifiable, quotable, reusable.
 Use it when you need *the material*, not a report on it.
@@ -156,7 +160,7 @@ not what you hoped for. A report is a legal signal, not a review.
 | `search_network` | free | One query across every node; returns what is licensable now, `include_offline` for the rest |
 | `list_nodes` | free | See who is on the network |
 | `preview_asset` | free | Description or thumbnail before buying |
-| `query_node` | paid | Ask a node about everything it holds — usually cheaper than buying |
+| `query_node` | paid | Passages from one node that bear on a question; sessions for many questions |
 | `purchase_asset` | paid | Licence the original file for the current task — only after the person agreed to the price |
 | `download_asset` | paid | Retrieve it with L402 credentials |
 | `report_node` | free | Misrepresented **and** apparently illegal content |
