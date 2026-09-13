@@ -45,15 +45,25 @@ of descriptions to avoid paying leaves the owner uncompensated for work you used
 
 Both are paid, and they are good at different things.
 
-**`query_node`** asks one node about everything it holds and returns
-*passages* — the pieces of its material that bear on the question, each
-naming the asset it came from. You do the reading. How much of any one asset
-a question can reveal is tied to what you paid relative to that asset's
-price, and capped; an exhausted asset appears under `exhausted` with its
-licence offer — the question found the right asset, the licence is how you
-use it. For several questions of one node, request a session first
-(`session: true`): one invoice, many questions, the response shows how many
-remain. Passages are licensed for the task at hand only.
+**`query_node`** searches *inside* one node's material and returns the
+passages that bear on a question, each naming the asset it came from.
+`search_network` sees only listings — titles, descriptions, an excerpt; a
+question reads the documents themselves, including material not listed for
+sale on its own. It is the only way to learn what a document actually says
+without licensing it, at a fraction of the price (typically 10 sats against
+hundreds or thousands for a file).
+
+Ask when you need to *know* something: a fact, a date, a figure, whether a
+document covers a topic. Ask before licensing when a listing looks right but
+you are not sure it holds what the task needs. Ask when the answer is spread
+across several of a node's files. License when you need the material
+*itself*. A question can reveal only a slice of any one asset — bounded by
+what you paid relative to its price, and capped — so an asset listed under
+`exhausted` is the signal to license it; the offer is attached. For more
+than a question or two of one node, start a session (`session: true`): one
+invoice, typically 20 questions for the price of 15, valid a day. The usual
+shape: search → preview → ask (a session, if several questions) → license
+what the questions showed you need.
 
 **`purchase_asset`** returns the file itself: verifiable, quotable, reusable.
 Use it when you need *the material*, not a report on it.
