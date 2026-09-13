@@ -44,13 +44,13 @@ repository.
 
 **Any MCP client at all** — connect directly, no auth:
 ```
-https://dataself-registry-production.up.railway.app/mcp
+https://panscia.com/network/mcp
 ```
 
 **No install at all** — every listing has a public page the registry serves
 from its index, readable as HTML or, with `Accept: application/ld+json`, as a
 record. The network describes itself to agents at
-`https://dataself-registry-production.up.railway.app/llms.txt`. An agent with
+`https://panscia.com/llms.txt`. An agent with
 only web fetch can find an item, read the record, and hand its person the
 payment page. The tools above are how it pays and fetches on its own.
 

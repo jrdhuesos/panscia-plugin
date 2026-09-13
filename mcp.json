@@ -3,7 +3,7 @@
   "mcpServers": {
     "panscia-network": {
       "type": "streamable-http",
-      "url": "https://dataself-registry-production.up.railway.app/mcp"
+      "url": "https://panscia.com/network/mcp"
     }
   }
 }
