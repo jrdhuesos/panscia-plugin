@@ -45,48 +45,49 @@ of descriptions to avoid paying leaves the owner uncompensated for work you used
 
 Both are paid, and they are good at different things.
 
-**Two ways into a node's material**, once search has found it. Neither is
-the default; they answer different needs, and a task often uses both.
+**The shape of a task.** Search the network, read the free listings and
+previews, and pick the one or two files that bear on the task. Everything
+paid after that is about a named file: every question carries its
+`asset_id`, a session covers one file and one route, and another file (on
+the same node or another) is another question or another session.
 
-*Ask* (`query_node`): a question searched inside the node's material — every
-document it has indexed, including material not listed for sale on its own —
-returning the passages that bear on it, each naming its asset. Gives you
-what the documents say about one thing, whether an asset covers a topic
-before you commit, or an answer spread across several files. Typically 10
-sats a question; a session (`session: true`) buys many questions of one node
-on one invoice, typically 20 for the price of 15, valid a day. Limits:
-passages, not files — a slice of any one asset, bounded by what you paid
-relative to its price and capped; only while the node is online.
+**Three routes into a file**, each with a job the others cannot do. Prices
+are fixed fractions of the file's licence price, the same on every node; the
+402 lists every route for the file with its price and what it delivers.
 
-*License* (`purchase_asset`): the asset itself as its owner published it —
-the whole document, the image at full resolution, the audio or video, the
-exact wording at any length; something to hand over, quote, or build on;
-delivered even when the node is offline if the owner keeps the file in the
-cloud. Costs the listing's price per asset. Limits: one file per licence,
-and a listing describes a file rather than proving it holds what you need.
+*Passages* (`ask_asset`, `route: "passages"`): up to three verbatim pieces
+of the file that bear on the question, each with a `chunk_id`. For the
+wording itself — to cite, check, or quote — and to confirm a file covers a
+topic before licensing. 5% of the licence a question; a session of 10 on
+that file for 25%. Bounded by coverage: no credential, session included,
+ever sees more than a fifth of the file. Files too short for that to be
+useful are not sold by the passage; the 402 says why.
 
-Choosing: need to *know* something — ask. Need the *material* — license.
-Unsure the listing holds what the task needs — ask first. Several questions
-of one node — a session. An asset under `exhausted` is one the question
-found and the rest of which is behind the licence; the offer is attached.
+*Answer* (`ask_asset`, `route: "answer"`): the node's own model reads the
+whole file and replies in at most two short sentences. For the fact — a
+date, a figure, a name, what the file says about one thing. Precise where
+passages are partial. 12% of the licence an answer; a session of 5 for 40%.
+Bounded by length: one fact per question, 300 characters; a question shaped
+like a summary, a list of everything or the full text gets a one-line
+refusal. Only nodes with a model sell answers.
 
-Ask when you need to *know* something: a fact, a date, a figure, whether a
-document covers a topic. Ask before licensing when a listing looks right but
-you are not sure it holds what the task needs. Ask when the answer is spread
-across several of a node's files. License when you need the material
-*itself*. A question can reveal only a slice of any one asset — bounded by
-what you paid relative to its price, and capped — so an asset listed under
-`exhausted` is the signal to license it; the offer is attached. For more
-than a question or two of one node, start a session (`session: true`): one
-invoice, typically 20 questions for the price of 15, valid a day. The usual
-shape: search → preview → ask (a session, if several questions) → license
-what the questions showed you need.
+*License* (`purchase_asset`): the file itself — the whole document, the
+image at full resolution, the audio or video, wording at any length;
+something to hand over, quote, or build on; delivered even when the node is
+offline if the owner keeps the file in the cloud. The listing's price.
 
-**`purchase_asset`** returns the file itself: verifiable, quotable, reusable.
-Use it when you need *the material*, not a report on it.
+Choosing: need the *fact* — answer. Need the *wording* — passages. Need the
+*material* — license. Unsure the file holds what the task needs — one
+question first; it costs a twentieth of a wrong licence. Several questions
+of one file — a session on it. One thing per question on either route.
+Phrase a passages question with the words you expect in the text; on a
+follow-up pass the `chunk_id`s you hold as `exclude_chunk_ids`.
 
-A reasonable default: ask first when the question is factual and spans a
-catalogue, buy when you need the artefact.
+Read the 402 before paying: `offers` gives each route's price and what it
+delivers (or why it is not sold); `forecast` says what this question would
+get — for passages, how many and how strong the match; for an answer,
+whether the question's shape gets a fact or a refusal. Do not pay for a
+question the forecast says is empty or refused.
 
 ## Paying
 
@@ -187,7 +188,7 @@ not what you hoped for. A report is a legal signal, not a review.
 | `search_network` | free | One query across every node; returns what is licensable now, `include_offline` for the rest |
 | `list_nodes` | free | See who is on the network |
 | `preview_asset` | free | Description or thumbnail before buying |
-| `query_node` | paid | Passages from one node that bear on a question; sessions for many questions |
+| `ask_asset` | paid | Passages from one node that bear on a question; sessions for many questions |
 | `purchase_asset` | paid | Licence the original file for the current task — only after the person agreed to the price |
 | `download_asset` | paid | Retrieve it with L402 credentials |
 | `report_node` | free | Misrepresented **and** apparently illegal content |
